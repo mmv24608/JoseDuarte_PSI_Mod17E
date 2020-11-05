@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html> 
+<head> 
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+  	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  	<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<title> Exercicios JavaScript </title>
+</head>
+<body >
+	<div align="center">
+<table style="border: 10px solid orange; width: 50%">
+    <tr align="center">
+        <td>
+        	<p style="font-size: 40px"><b> Fichas de Exercícios</b></p>
+        	<br>
+			<hr width="99%" style="border: 5px solid black">
+			<br>
+			<h1 id = pay>Exercicio 1 - Media</h1>
+			<div id = pa hidden="true">
+				<table >
+			            <tr>
+			             <td>
+				
+				<form name= "form1">
+					<br>Nota 1:&nbsp;<input type="text" name="n1"><br>
+					<br>Nota 2:&nbsp;<input type="text" name="n2"><br>
+					<br>Nota 3:&nbsp;<input type="text" name="n3"><br>
+
+					<br>Media:&nbsp;<input type="text" name="text1" readonly><br><br>
+					<input type="button" value="Calcula a media" onclick="media()" > 
+					<input type="reset" value="Limpar" />
+				</form>
+				</td>
+			            </tr>
+			        </table>
+			</div>
+			<br>
+			<script type="text/javascript">
+
+				function media()
+				    {
+				        var nota1 = document.form1.n1.value;
+				        var nota2 = document.form1.n2.value;
+				        var nota3 = document.form1.n3.value;
+				        var soma = Number(nota1)+Number(nota2)+Number(nota3);
+				        document.form1.text1.value = soma/3;
+				    }
+			</script> 
+			<br>
+			<hr width="80%" style="border: 5px solid red">
+			<br>
+			<h1 id = poy> Exercicio 2 - IVA</h1>
+			    <div id = po hidden="true">
+			        <table >
+			            <tr>
+			             <td>
+			                 <form name="form2">
+			                     Custo do produto (€):
+			                     <input type="text" name="custo"><br><br>
+
+			                     Taxa IVA:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			                     <select name="taxaiva">
+			                      <option value="23">23%</option>
+			                      <option value="15">15%</option>
+			                      <option value="10">10%</option>
+			                    </select><br><br>
+
+			                    Total IVA:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			                    <input type="text" name="tiva" disabled="true"><br><br>
+
+			                    <input type="button" value="calcular IVA" onclick="calculariva();">
+
+			                    <input type="reset" value="Apagar" name="resetbutton2">
+
+
+			                 </form>
+
+			                 <script type="text/javascript">
+			                     function calculariva()
+			                     {
+			                         var custo = Number(document.form2.custo.value);
+
+			                         var taxaiva = Number(document.form2.taxaiva.value);
+
+			                         var tiva = custo*(taxaiva/100);
+
+			                         document.form2.tiva.value = tiva;
+
+			                     }
+
+			                 </script>
+			             </td>
+			            </tr>
+			        </table>
+			    </div>
+			<br>
+			<hr width="80%" style="border: 5px solid red">
+			<br>
+			<h1 id = pey>Exercicio 3 - Calculadora</h1>
+			<div id = pe hidden="true">
+				<table >
+			            <tr>
+			             <td>
+				
+				<form name= "form3">
+					<br>Valor 1:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="v1"><br>
+					<br>Valor 2:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="v2"><br><br>
+					Operação:&nbsp;&nbsp;
+					<select name="funcoes" >
+					  <option value="som">soma</option>
+					  <option value="divi">divisão</option>
+					  <option value="mult">multiplicação</option>
+					  <option value="sub">subtração</option>
+					</select><br><br>
+					Resultado:&nbsp;&nbsp;<input type="text" name="text3" readonly><br><br>
+					<input type="button" value="Calcular" onclick="operacao();" />
+					<input type="reset" value="Limpar" />
+				</form>
+			</td>
+			            </tr>
+			        </table>
+			</div>
+			<script type="text/javascript">
+
+				function operacao()
+				    {
+				        var valor1 = document.form3.v1.value;
+				        var valor2 = document.form3.v2.value;
+				        if (document.form3.funcoes.value == "som"){
+				        	var resut = Number(valor1)+Number(valor2);
+				        }
+				        if (document.form3.funcoes.value == "divi"){
+				        	var resut = Number(valor1)/Number(valor2);
+				        }
+				        if (document.form3.funcoes.value == "mult"){
+				        	var resut = Number(valor1)*Number(valor2);
+				        }
+				        if (document.form3.funcoes.value == "sub"){
+				        	var resut = Number(valor1)-Number(valor2);
+				        }
+				        document.form3.text3.value = resut;
+				    }
+
+			</script> 
+			<br>
+			<hr width="80%" style="border: 5px solid red">
+			<br>
+			<h1 id = piy>Exercicio 4 - IMC</h1>
+			<div id= pi hidden="true">
+				<table>
+			            <tr>
+			             <td>
+			        
+			        <form name="form4">
+			            Peso:&nbsp;&nbsp;&nbsp;&nbsp;
+			            <input type="text" name="peso"><br><br>
+
+			            Altura:&nbsp;
+			            <input type="text" name="altura"><br><br>
+
+			            IMC:&nbsp;&nbsp;&nbsp;&nbsp;
+			            <input type="text" name="imc" disabled="true"><br><br>
+
+			            Aviso:&nbsp;&nbsp;
+			            <input type="text" name="aviso" disabled="true"><br><br>
+
+			            <input type="button" value="Calcular" onclick="calcularimc();">
+
+			            <input type="reset" value="Apagar" name="resetbutton4">
+
+			        </form>
+					</td>
+			            </tr>
+			        </table>
+			        <script type="text/javascript">
+			            function calcularimc()
+			            {
+			                var peso = Number(document.form4.peso.value);
+			                var altura = Number(document.form4.altura.value);
+			                var imc = peso/(altura*altura)*10000;
+
+			                document.form4.imc.value = imc;
+			                if(imc <18.5 )
+			                {
+			                    aviso = "Abaixo do Peso";
+			                }
+			                else if(imc >= 18.5 && imc <25)
+			                {
+			                    aviso = "Peso Normal";
+			                }
+			                else if(imc>= 25 && imc <30)
+			                {
+			                    aviso = "Sobrepeso";
+			                }
+			                else if(imc>=30 && imc <35)
+			                {
+			                    aviso = "Obesidade Grau I";
+			                }
+			                else if (imc >= 35 && imc <40)
+			                {
+			                    aviso = "Obesidade Grau II";
+			                }
+			                else if (imc >= 40)
+			                {
+			                    aviso = "Obesidade Grau III Ou Mórbida";
+			                }
+
+			                document.form4.aviso.value = aviso;
+
+			            }
+
+			        </script>
+			    </div>
+			<br>
+			<hr width="80%" style="border: 5px solid red">
+			<br>
+			<h1 id = puy> Exercicio 5 - Dados</h1>
+			    <div id = pu hidden="true">
+			        <table >
+			            <tr>
+			             <td>
+			                 <div align="center">
+								<form name = "form5">
+									<table style="border: 20px solid blue; width: 90%; background-color: gray">
+									    <tr align="center">
+									        <th  height="30px" colspan="3" style="font-size: 30px">Jogo de Dados</th>
+							        	</tr>
+
+							        	<tr align="center">
+									        <td style="width: 10%" height="30px"></td>
+									        <td style="background-color: white"><img src="dados.jpg" alt="Dados" height="200px" ></td>
+									        <td style="background-color: white " align="left" >
+									        	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dado 1: <input type="text" name="d1" readonly size="5px"><br><br>
+									        	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dado 2: <input type="text" name="d2" readonly size="5px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><a style="color: orange; font-size: 20px" id="co"></a></b> <br><br>
+									        	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dado 3: <input type="text" name="d3" readonly size="5px"><br>
+									        	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									        	Total: <input type="text" name="total" readonly size="5px"><br><br>
+									        	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Palpite: <input type="text" name="palpite" size="5px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type= "button" onclick="dados()" style="background-color: green;color: white"  >Lançar</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type="reset" style="background-color: green;color: white">Limpar</button>
+
+
+
+									        </td>
+									        <td style="width: 10%" height="30px"></td>
+							        	</tr>
+
+							        	<tr align="center">
+									        <td style="width: 10%" height="30px"  colspan="3"></td>
+							        	</tr>
+							    	</table>
+						    	</form>
+						    </div>
+
+			                 <script type="text/javascript">
+								function dados()
+							    {
+								    document.form5.d1.value = 1 + Math.floor(Math.random()*6);
+								    document.form5.d2.value = 1 + Math.floor(Math.random()*6);
+								    document.form5.d3.value = 1 + Math.floor(Math.random()*6);
+								    document.form5.total.value = Number(document.form5.d1.value) + Number(document.form5.d2.value) + Number(document.form5.d3.value);
+								    if (document.form5.total.value == document.form5.palpite.value){
+	     								 $("#co").html("Acertou");
+	    							}
+	    							else{
+	    								$("#co").html("Errou");
+	    							}
+								   
+							    }
+							</script>
+			             </td>
+			            </tr>
+			        </table>
+			    </div>
+			    <br>
+			<hr width="99%" style="border: 5px solid black">
+			<p style="font-size: 20px">Turma 12º B &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; José Duarte, Nº 12</p>
+			<br>
+			</td>
+        </tr>
+    </table>
+    </div>
+    
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+			<script>
+				$(document).ready(function(){
+				  $("#pay").click(function(){
+				    $("#pa").toggle();
+				    });
+				  	 $("#poy").click(function(){
+				    $("#po").toggle();
+				    });
+				  	 $("#pey").click(function(){
+				    $("#pe").toggle();
+				    });
+				  	 $("#piy").click(function(){
+				    $("#pi").toggle();
+				    });
+				  	 $("#puy").click(function(){
+				    $("#pu").toggle();
+				    });
+				  });
+			
+			</script>
+</html> 
